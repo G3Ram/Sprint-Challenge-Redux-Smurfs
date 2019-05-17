@@ -34,32 +34,35 @@ class AddSmurfs extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="add-smurf">
         <form onSubmit={this.addSmurfs}>
           <h2>Please enter the details below:</h2>
-          <div>
-            <div>Name:</div>
-            <div>
+          <div className="add-smurf-form">
+            <div className="form-label">Name:</div>
+            <div className="form-input">
               <input
                 type="text"
+                className="input-contact"
                 name="name"
                 value={this.state.newSmurf.name}
                 onChange={this.handleChange}
               />
             </div>
-            <div>Age:</div>
-            <div>
+            <div className="form-label">Age:</div>
+            <div className="form-input">
               <input
                 type="text"
+                className="input-contact"
                 name="age"
                 value={this.state.newSmurf.age}
                 onChange={this.handleChange}
               />
             </div>
-            <div>Height:</div>
-            <div>
+            <div className="form-label">Height:</div>
+            <div className="form-input">
               <input
                 type="text"
+                className="input-contact"
                 name="height"
                 value={this.state.newSmurf.height}
                 onChange={this.handleChange}
