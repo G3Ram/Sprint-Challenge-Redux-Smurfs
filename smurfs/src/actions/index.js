@@ -13,3 +13,27 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+import axios from "axios";
+
+export const SHOW_SMURFS_START = "SHOW_SMURFS_START";
+export const SHOW_SMURFS_SUCCESS = "SHOW_SMURFS_SUCCESS";
+export const SHOW_SMURFS_FAILURE = "SHOW_SMURFS_FAILURE";
+
+export const getSmurfs = () => dispatch => {
+  dispatch({ type: SHOW_SMURFS_START });
+  console.log(":: CALLING GET SMURFS ::");
+  axios()
+    .get("http://localhost:3333/smurfs")
+    .then(res => {
+      console.log(res.data);
+      dispatch({
+        type: SHOW_SMURFS_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: SHOW_SMURFS_FAILURE, payload: err });
+    });
+};
