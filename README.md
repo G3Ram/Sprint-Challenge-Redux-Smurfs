@@ -23,8 +23,51 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+## Answer 1
+
+Store - This is an object which holds the state data
+Reducer - This is a function which always returns the state data. This is the place where
+the state data can be changed based on the action type. Both action and state will be made
+available to this function. Every store must refer to a reducer.
+Actions - This is an object which holds the action type and the respective data for each action
+type. This object must have a mandatory type and an optional payload. Type has the type of action
+and payload has the data to be set in state for the respective action type.
+
+The store holds the state data globally. It can be accessed from any component and all the
+component can refer to one place to render the latest information. This is the reason the store in
+redux is known as the single sour of truth.
+
+---
+
+## Answer 2
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state as the name suggests is a global state and is available to all the members/components
+of the application. It need not be explicity passed from parent to child.
+
+Component state is a local state and is available only to that component where it is created. It has to be
+explicity passed to its child components to be made available.
+
+If I have form elements that is specific to a component, then I would prefer to use a component state. As
+the contents of the form will be available in a different form in the overall state, but to manipulate within
+the component, it would make more sense to have it in component state. Ex. controlled inputs
+
+Application state will be used if a particular state data is mutated by multiple components and the latest
+data should show up on render.
+
+---
+
+## Answer 3
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+'redux-thunk' is a middleware. It helps us to write action creators that return a function instead of
+an action. This helps to intercept the flow between action and reducer and delays the dispatch of action
+or dispatches the action only if certain criteria is met.
+
+---
 
 ## Project Set Up
 
@@ -80,9 +123,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +156,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +216,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
