@@ -19,6 +19,9 @@ import axios from "axios";
 export const SHOW_SMURFS_START = "SHOW_SMURFS_START";
 export const SHOW_SMURFS_SUCCESS = "SHOW_SMURFS_SUCCESS";
 export const SHOW_SMURFS_FAILURE = "SHOW_SMURFS_FAILURE";
+export const ADD_SMURFS_START = "ADD_SMURFS_START";
+export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS";
+export const ADD_SMURFS_FAILURE = "ADD_SMURFS_FAILURE";
 
 export const getSmurfs = () => dispatch => {
   dispatch({ type: SHOW_SMURFS_START });
