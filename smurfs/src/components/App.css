@@ -24,3 +24,14 @@
   margin: 1.25%;
   border: 1px solid red;
 }
+
+.smurf-images {
+  width: 40%;
+  text-align: right;
+  margin-left: 60%;
+}
+
+.smurf-images img {
+  padding-right: 10px;
+  cursor: pointer;
+}

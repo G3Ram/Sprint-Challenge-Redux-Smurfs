@@ -4,7 +4,10 @@ import {
   SHOW_SMURFS_FAILURE,
   ADD_SMURFS_START,
   ADD_SMURFS_SUCCESS,
-  ADD_SMURFS_FAILURE
+  ADD_SMURFS_FAILURE,
+  DEL_SMURFS_START,
+  DEL_SMURFS_SUCCESS,
+  DEL_SMURFS_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -53,6 +56,26 @@ function smurfsReducer(state = initialState, action) {
       };
     }
     case ADD_SMURFS_FAILURE: {
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+    }
+    case DEL_SMURFS_START: {
+      return {
+        ...state,
+        isLoading: true
+      };
+    }
+    case DEL_SMURFS_SUCCESS: {
+      return {
+        ...state,
+        smurfs: action.payload,
+        isLoading: false
+      };
+    }
+    case DEL_SMURFS_FAILURE: {
       return {
         ...state,
         error: action.payload,
